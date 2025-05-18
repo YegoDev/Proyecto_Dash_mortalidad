@@ -1,10 +1,17 @@
 import pandas as pd 
 import time
+import os 
 
 def cargar_datos(): 
     '''Carga las 3 entidades del modelo en data frames de pandas: mortalidad, causas de muerte y locacaciones'''
 
     inico = time.time()
+
+    ruta = "data/anexo1.csv"
+    print("Verificando si existe el archivo:", ruta)
+    print("Ruta absoluta:", os.path.abspath(ruta))
+    print("¿Existe?:", os.path.exists(ruta))
+    
     df_mortalidad = pd.read_csv("data/anexo1.csv")       # Cargo la fuente de hechos  
    
     df_causas_muerte = pd.read_csv("data/Anexo2.CodigosDeMuerte_CE_15-03-23.csv")        # Cargo la fuente de la dimensión de causas 
