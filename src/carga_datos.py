@@ -7,14 +7,16 @@ def cargar_datos():
 
     inico = time.time()
 
-    ruta = "data/anexo1.csv"
-    print("Verificando si existe el archivo:", ruta)
-    print("Ruta absoluta:", os.path.abspath(ruta))
-    print("¿Existe?:", os.path.exists(ruta))
-    
-    df_mortalidad = pd.read_csv("data/anexo1.csv")       # Cargo la fuente de hechos  
+    ruta1 = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "anexo1.csv"))
+    ruta2 = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Anexo2.CodigosDeMuerte_CE_15-03-23.csv"))
+    ruta3 = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Anexo3.Divipola_CE_15-03-23.csv"))
+    print("Verificando si existe el archivo:", ruta1)
+    print("Ruta absoluta:", os.path.abspath(ruta1))
+    print("¿Existe?:", os.path.exists(ruta1))
+
+    df_mortalidad = pd.read_csv(ruta1)       # Cargo la fuente de hechos  
    
-    df_causas_muerte = pd.read_csv("data/Anexo2.CodigosDeMuerte_CE_15-03-23.csv")        # Cargo la fuente de la dimensión de causas 
+    df_causas_muerte = pd.read_csv(ruta2)        # Cargo la fuente de la dimensión de causas 
 
     df_causas_muerte.columns = [        #Cambio los nombres de las colummas  de df_causas_muerte                                                           
         'CAPITULO',
@@ -25,7 +27,7 @@ def cargar_datos():
         'DESCRIPCION_CIE_4C'
     ]
 
-    df_locaciones = pd.read_csv("data/Anexo3.Divipola_CE_15-03-23.csv")      # Cargo la fuente de la dimensión de localidades
+    df_locaciones = pd.read_csv(ruta3)      # Cargo la fuente de la dimensión de localidades
 
     return df_mortalidad, df_causas_muerte, df_locaciones
 
