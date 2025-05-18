@@ -5,7 +5,7 @@ def cargar_datos():
     '''Carga las 3 entidades del modelo en data frames de pandas: mortalidad, causas de muerte y locacaciones'''
 
     inico = time.time()
-    df_mortalidad = pd.read_csv("data/Anexo1.NoFetal2019_CE_15-03-23.csv")       # Cargo la fuente de hechos  
+    df_mortalidad = pd.read_csv("data/Anexo1_mortalidad.csv")       # Cargo la fuente de hechos  
    
     df_causas_muerte = pd.read_csv("data/Anexo2.CodigosDeMuerte_CE_15-03-23.csv")        # Cargo la fuente de la dimensión de causas 
 
