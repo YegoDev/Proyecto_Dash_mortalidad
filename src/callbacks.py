@@ -3,6 +3,7 @@ import plotly.express as px
 import pandas as pd
 import json
 import dash.dash_table as dt
+import os
 
 def registrar_callbacks(app, df):
     @app.callback(
@@ -17,7 +18,8 @@ def registrar_callbacks(app, df):
             df_muertes = df.groupby(["COD_DEPARTAMENTO", "DEPARTAMENTO"]).size().reset_index(name="TOTAL_MUERTES")
 
             # Cargar GeoJSON
-            with open("data/Colombia_geojson.json", encoding="utf-8") as f:
+            ruta_geojson = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "Colombia_geojson.json"))
+            with open(ruta_geojson, encoding="utf-8") as f:
                 geojson = json.load(f)
 
             # Crear choropleth
