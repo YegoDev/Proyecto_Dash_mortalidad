@@ -1,5 +1,6 @@
 ## **APLICACIÓN WEB INTERACTIVA**
-Yeison Esteven García Olaya
+Yeison Esteven García Olaya  
+Repositorio del proyecto: https://github.com/YegoDev/Proyecto_Dash_mortalidad.git
 
 ### Tabla de Contenido
 
@@ -7,6 +8,9 @@ Yeison Esteven García Olaya
 2. [Estructura](#Estructura)
 3. [Visualizaciones](#visualizaciones)
 4. [Despliegue de la aplicación](#despliegue)
+
+## Nota:  
+Este fichero no reeplaza el informe realizado, el cual fue enviado por la actividad de Moodle. 
 
 ## Introducción  
 Se detallará el uso de Dash para la construcción de una aplicación web compuesta por siete gráficos, relacionados con los datos de fallecimientos registrados en Colombia para el año 2019. En este sentido, se describirá la estructura y el funcionamiento del proyecto desarrollado, así como el procedimiento llevado a cabo para su despliegue en la plataforma Render, accesible a través del enlace: https://proyecto-dash-mortalidad.onrender.com.
