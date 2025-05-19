@@ -22,8 +22,16 @@ def generar_layout():
             style=dropdown_style
         ),
 
+        #Creo spinner 
+        dcc.Loading(
+            id="spinner-principal",
+            type="circle",
+            fullscreen=False,
+            children=html.Div(id="contenedor-visualizacion")
+        ),
+
         #dcc.Graph(id="grafico-principal"),
-        html.Div(id="contenedor-visualizacion"),
+        #html.Div(id="contenedor-visualizacion"),
         html.Hr(),
         generar_footer()
     ], style=contenedor_principal_style)
